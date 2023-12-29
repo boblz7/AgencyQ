@@ -1,0 +1,48 @@
+@import "./variables.module.scss";
+
+.postsContainer {
+  width: 100%;
+  max-width: 500px;
+  background-color: $postBackgroundColor;
+  border-radius: $postsContainerBorderRadius;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.userNameContainer {
+  p {
+    width: 200px;
+    height: 17px;
+    background-color: $backgroundColor;
+    border-radius: 2px;
+  }
+}
+
+.postInfo {
+  > div:first-child {
+    h1 {
+      width: 300px;
+      height: 22px;
+      background-color: white;
+    }
+  }
+
+  > div:last-child {
+    p {
+      width: 200px;
+      height: $height;
+    }
+  }
+}
+
+.commentsItem {
+  .commentsItemName {
+    p {
+    }
+  }
+
+  .commentsItemDesc {
+    p {
+    }
+  }
+}

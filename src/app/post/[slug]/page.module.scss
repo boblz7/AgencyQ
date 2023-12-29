@@ -1,0 +1,24 @@
+$backgroundColor: #18191a;
+$secondaryBackgroundColor: #242526;
+$alternateBackgroundColor: #57595c40;
+
+.postContainer {
+  background-color: $backgroundColor;
+
+  .backContainer {
+    a {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: $secondaryBackgroundColor;
+      padding: 10px 20px 10px 10px;
+      border-radius: 4px;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        background-color: $alternateBackgroundColor;
+      }
+    }
+  }
+}

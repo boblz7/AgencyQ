@@ -1,0 +1,181 @@
+@import "./variables.module.scss";
+
+$h1-height: 27px;
+$h2-height: 22px;
+$p-height: 12px;
+
+.postsContainer {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: $postBackgroundColor;
+  border-radius: $postsContainerBorderRadius;
+  overflow: hidden;
+
+  &.postsContainerAlternate {
+    max-width: 1024px;
+
+    .commentsContainer {
+    }
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  &.skeletonLoader {
+    @keyframes loading {
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @mixin skeleton-loading {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: loading 1.5s infinite;
+        background: linear-gradient(90deg, rgba(33, 33, 33, 0), rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0));
+        transform: translateX(-100%);
+        z-index: 1;
+      }
+    }
+
+    position: relative;
+    cursor: wait;
+    @include skeleton-loading;
+
+    .postContent {
+      &:hover {
+        cursor: wait;
+      }
+    }
+
+    h1,
+    h2,
+    p {
+      position: relative;
+      background-color: $primaryTextColor;
+      border-radius: $postsContainerBorderRadius;
+      overflow: hidden;
+
+      @include skeleton-loading;
+    }
+
+    h1 {
+      height: $h1-height;
+    }
+    h2 {
+      height: $h2-height;
+      margin-bottom: 5px;
+    }
+    h1,
+    h2 {
+      max-width: 210px;
+      width: 100%;
+    }
+
+    p {
+      height: $p-height;
+
+      &:only-child {
+        width: 100%;
+        max-width: 140px;
+        // background-color: $primaryTextColor;
+      }
+
+      &:not(:only-child) {
+        margin-bottom: 5px;
+      }
+      &:first-child:not(:only-child) {
+        width: 100%;
+        max-width: 300px;
+      }
+      &:nth-child(2) {
+        width: 55%;
+        max-width: 160px;
+      }
+      &:nth-child(3) {
+        width: 75%;
+        max-width: 210px;
+      }
+    }
+  }
+
+  .postContent {
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      background: $postHoverBackground;
+      cursor: pointer;
+    }
+
+    .userNameContainer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid $primaryTextColor;
+      padding: 30px;
+
+      p {
+        letter-spacing: 7px;
+        font-weight: 700;
+        color: $primaryTextColor;
+      }
+    }
+
+    .postInfo {
+      padding: 30px 20px;
+      border-bottom: 1px solid $primaryTextColor;
+
+      .postTitle {
+        padding-bottom: 10px;
+        h1 {
+          // font-size: 24px;
+        }
+      }
+
+      .postDesc {
+        p {
+          // font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .commentsContainer {
+    height: 430px;
+    display: grid;
+    gap: 30px;
+    padding: 30px;
+    overflow-y: auto;
+
+    .commentsTitle {
+    }
+
+    .commentsItem {
+      padding: 10px 16px;
+      background-color: $commentBackgorundColor;
+      border-radius: 4px;
+
+      .commentsItemName {
+        padding-bottom: 4px;
+
+        h2 {
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+
+      .commentsItemDesc {
+        p {
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}

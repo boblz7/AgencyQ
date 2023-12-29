@@ -1,0 +1,10 @@
+.appSvg {
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  // background-color: $fillColor;
+  width: 100%;
+  height: 100%;
+  transition: all 100ms ease-in-out;
+}

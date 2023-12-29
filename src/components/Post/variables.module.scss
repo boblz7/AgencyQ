@@ -1,0 +1,13 @@
+$backgroundColor: #18191a;
+$postBackgroundColor: #242526;
+$commentBackgorundColor: #3a3b3cff;
+$primaryTextColor: #b0b3b8;
+$postHoverBackground: #57595c40;
+
+$commentItemRadius: 27px;
+$padding: 10px 30px;
+$postsContainerBorderRadius: 7px;
+
+:export {
+  primaryTextColor: $primaryTextColor;
+}

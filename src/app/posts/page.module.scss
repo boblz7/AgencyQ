@@ -1,0 +1,10 @@
+$backgroundColor: #18191a;
+
+.postsContainer {
+  position: relative;
+  background-color: $backgroundColor;
+  display: grid;
+  align-items: center;
+  gap: 100px;
+  padding: 50px;
+}
