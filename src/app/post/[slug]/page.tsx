@@ -1,30 +1,30 @@
-import Post from "@components/Post/Post";
-import { API_URL } from "@config/api";
-import { IPostsItem } from "@interfaces/Posts";
-import postsStyles from "../../posts/page.module.scss";
-import styles from "./page.module.scss";
-import Link from "next/link";
-import AppSvg from "@components/AppSvg/AppSvg";
-import { Suspense } from "react";
-import LoadingSkeleton from "@components/Post/LoadingSkeleton";
-import { CMessage } from "@constants/main";
+import Post from '@components/Post/Post'
+import { API_URL } from '@config/api'
+import { IPostsItem } from '@interfaces/Posts'
+import postsStyles from '../../posts/page.module.scss'
+import styles from './page.module.scss'
+import Link from 'next/link'
+import AppSvg from '@components/AppSvg/AppSvg'
+import { Suspense } from 'react'
+import LoadingSkeleton from '@components/Post/LoadingSkeleton'
+import { CMessage } from '@constants/main'
 
 export async function generateStaticParams() {
-  const posts: Array<IPostsItem> = await fetch(`${API_URL}/posts`).then((res) => res.json());
+  const posts: Array<IPostsItem> = await fetch(`${API_URL}/posts`).then((res) => res.json())
 
   return posts.map((post) => ({
     slug: `${post.id}`,
-  }));
+  }))
 }
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  const post: IPostsItem = await fetch(`${API_URL}/posts/${params.slug}`).then((res) => res.json());
+  const post: IPostsItem = await fetch(`${API_URL}/posts/${params.slug}`).then((res) => res.json())
 
   return (
     <div className={styles.postContainer}>
       <div className={styles.backContainer}>
         <Link href={`/posts`} scroll={false}>
-          <AppSvg componentMessage={CMessage} path={"/chevron-left.svg"} size={20} />
+          <AppSvg componentMessage={CMessage} path={'/chevron-left.svg'} size={20} />
           Back to all posts
         </Link>
       </div>
@@ -35,5 +35,5 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </Suspense>
       </div>
     </div>
-  );
+  )
 }

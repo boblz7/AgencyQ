@@ -1,16 +1,15 @@
-import styles from "@components/AppSvg/appSvg.module.scss";
-import { IAppSvg } from "@interfaces/AppSvg";
-import { consoleOnRender } from "@utils/sharedFncs";
+import styles from '@components/AppSvg/appSvg.module.scss'
+import { IAppSvg } from '@interfaces/AppSvg'
+import { consoleOnRender } from '@utils/sharedFncs'
 
-export default async function Page({
+export default async function AppSvg({
   path,
-  color = "white",
-  hColor,
+  color = 'white',
   size = 14,
   componentMessage,
-  componentName = "AppSvg",
+  componentName = 'AppSvg',
 }: IAppSvg) {
-  consoleOnRender(componentMessage, componentName);
+  consoleOnRender(componentMessage, componentName)
 
   const custStyle = {
     WebkitMaskImage: `url(${path})`,
@@ -18,7 +17,7 @@ export default async function Page({
     width: `${size}px`,
     height: `${size}px`,
     backgroundColor: color,
-  };
+  }
 
-  return <div className={styles.appSvg} style={custStyle}></div>;
+  return <div className={styles.appSvg} style={custStyle}></div>
 }

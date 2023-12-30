@@ -1,6 +1,4 @@
-$backgroundColor: #18191a;
-$secondaryBackgroundColor: #242526;
-$alternateBackgroundColor: #57595c40;
+@import '../../../styles/variables.module.scss';
 
 .postContainer {
   background-color: $backgroundColor;

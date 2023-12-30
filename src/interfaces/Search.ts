@@ -1,4 +1,4 @@
 export interface ISearch {
-  componentMessage: string;
-  componentName?: string;
+  componentMessage: string
+  componentName?: string
 }

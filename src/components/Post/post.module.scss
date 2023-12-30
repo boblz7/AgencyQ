@@ -1,4 +1,4 @@
-@import "./variables.module.scss";
+@import '../../styles/variables.module.scss';
 
 $h1-height: 27px;
 $h2-height: 22px;
@@ -32,7 +32,7 @@ $p-height: 12px;
 
     @mixin skeleton-loading {
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -85,7 +85,6 @@ $p-height: 12px;
       &:only-child {
         width: 100%;
         max-width: 140px;
-        // background-color: $primaryTextColor;
       }
 
       &:not(:only-child) {
@@ -134,15 +133,6 @@ $p-height: 12px;
 
       .postTitle {
         padding-bottom: 10px;
-        h1 {
-          // font-size: 24px;
-        }
-      }
-
-      .postDesc {
-        p {
-          // font-size: 14px;
-        }
       }
     }
   }
@@ -153,9 +143,6 @@ $p-height: 12px;
     gap: 30px;
     padding: 30px;
     overflow-y: auto;
-
-    .commentsTitle {
-    }
 
     .commentsItem {
       padding: 10px 16px;

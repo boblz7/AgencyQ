@@ -1,4 +1,8 @@
-@import "./variables.module.scss";
+@import '../../styles/variables.module.scss';
+
+$backgroundColor: #b0b3b8;
+
+$pHeight: 17px;
 
 .postsContainer {
   width: 100%;
@@ -12,7 +16,7 @@
 .userNameContainer {
   p {
     width: 200px;
-    height: 17px;
+    height: $pHeight;
     background-color: $backgroundColor;
     border-radius: 2px;
   }
@@ -30,7 +34,7 @@
   > div:last-child {
     p {
       width: 200px;
-      height: $height;
+      height: $pHeight;
     }
   }
 }

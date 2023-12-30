@@ -1,12 +1,12 @@
-import { IPosts } from "@interfaces/Posts";
-import { IUser } from "@interfaces/Users";
-import { IComment } from "@interfaces/Comments";
-import { consoleOnRender, getData } from "@utils/sharedFncs";
-import { API_URL } from "@config/api";
-import styles from "./post.module.scss";
-import styleVariable from "./variables.module.scss";
-import Link from "next/link";
-import AppSvg from "@components/AppSvg/AppSvg";
+import { IPosts } from '@interfaces/Posts'
+import { IUser } from '@interfaces/Users'
+import { IComment } from '@interfaces/Comments'
+import { consoleOnRender, getData } from '@utils/sharedFncs'
+import { API_URL } from '@config/api'
+import styles from './post.module.scss'
+import styleVariable from '@styles/variables.module.scss'
+import Link from 'next/link'
+import AppSvg from '@components/AppSvg/AppSvg'
 
 export default async function Post({
   userId,
@@ -17,28 +17,28 @@ export default async function Post({
   getUser,
   getComments,
   componentMessage,
-  componentName = "Post",
+  componentName = 'Post',
 }: IPosts) {
-  consoleOnRender(componentMessage, componentName);
+  consoleOnRender(componentMessage, componentName)
 
-  const user: IUser = getUser || (await getData(`${API_URL}/users/${userId}`));
-  const comments: IComment[] = getComments || (await getData(`${API_URL}/posts/${id}/comments`));
+  const user: IUser = getUser || (await getData(`${API_URL}/users/${userId}`))
+  const comments: IComment[] = getComments || (await getData(`${API_URL}/posts/${id}/comments`))
 
-  const postUrl = !isAlone ? `/post/${id}` : "";
+  const postUrl = !isAlone ? `/post/${id}` : ''
 
   return (
-    <div className={`${styles.postsContainer} ${isAlone ? styles.postsContainerAlternate : ""}`}>
+    <div className={`${styles.postsContainer} ${isAlone ? styles.postsContainerAlternate : ''}`}>
       <div className={styles.postContent}>
         <Link
           href={postUrl}
           style={{
-            pointerEvents: isAlone ? "none" : "auto",
+            pointerEvents: isAlone ? 'none' : 'auto',
           }}
         >
           <div className={styles.userNameContainer}>
             <AppSvg
               componentMessage={componentMessage}
-              path={"/external-link.svg"}
+              path={'/external-link.svg'}
               color={styleVariable.primaryTextColor}
               size={16}
             />
@@ -71,7 +71,7 @@ export default async function Post({
         ))}
       </div>
     </div>
-  );
+  )
 }
 
-<style lang="scss" scoped></style>;
+;<style lang="scss" scoped></style>

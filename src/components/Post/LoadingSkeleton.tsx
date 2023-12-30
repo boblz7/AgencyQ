@@ -1,24 +1,23 @@
-// import styles from "./skeleton.module.scss";
-import { consoleOnRender } from "@utils/sharedFncs";
-import styles from "./post.module.scss";
-import { ILoadingPostSkeleton } from "@interfaces/LoadingSkeleton";
+import { consoleOnRender } from '@utils/sharedFncs'
+import styles from './post.module.scss'
+import { ILoadingPostSkeleton } from '@interfaces/LoadingSkeleton'
 
-const commentsArray: undefined[] = [...Array(5)];
+const commentsArray: undefined[] = [...Array(5)]
 
 export default function LoadingSkeleton({
   isAlone = false,
   postNumber = 1,
   componentMessage,
-  componentName = "Loading Skeleton",
+  componentName = 'Loading Skeleton',
 }: ILoadingPostSkeleton) {
-  consoleOnRender(componentMessage, componentName);
+  consoleOnRender(componentMessage, componentName)
 
-  const postsArray: undefined[] = [...Array(postNumber)];
+  const postsArray: undefined[] = [...Array(postNumber)]
 
   return postsArray.map((post, i) => (
     <div
       key={`skeletonPost${i}`}
-      className={`${styles.postsContainer} ${isAlone ? styles.postsContainerAlternate : ""} ${styles.skeletonLoader}`}
+      className={`${styles.postsContainer} ${isAlone ? styles.postsContainerAlternate : ''} ${styles.skeletonLoader}`}
     >
       <div className={styles.postContent}>
         <div>
@@ -54,5 +53,5 @@ export default function LoadingSkeleton({
         ))}
       </div>
     </div>
-  ));
+  ))
 }

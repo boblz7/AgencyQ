@@ -1,1 +1,1 @@
-export const CMessage = "Hello from";
+export const CMessage = 'Hello from'

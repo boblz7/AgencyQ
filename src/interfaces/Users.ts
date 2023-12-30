@@ -1,36 +1,36 @@
-import { IComment } from "./Comments";
-import { IPostsItem } from "./Posts";
+import { IComment } from './Comments'
+import { IPostsItem } from './Posts'
 
 export interface IUser {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: IUserAddress;
-  phone: string;
-  website: string;
-  company: IUserCompany;
+  id: number
+  name: string
+  username: string
+  email: string
+  address: IUserAddress
+  phone: string
+  website: string
+  company: IUserCompany
 }
 interface IUserAddress {
-  street: string;
-  suite: string;
-  city: string;
-  zipcode: string;
+  street: string
+  suite: string
+  city: string
+  zipcode: string
   geo: {
-    lat: string;
-    lng: string;
-  };
+    lat: string
+    lng: string
+  }
 }
 interface IUserCompany {
-  name: string;
-  catchPhrase: string;
-  bs: string;
+  name: string
+  catchPhrase: string
+  bs: string
 }
 
 export interface IUserAndPosts extends IUser {
-  posts: IPostsAndComments[];
+  posts: IPostsAndComments[]
 }
 interface IPostsAndComments {
-  post: IPostsItem;
-  comments: IComment[];
+  post: IPostsItem
+  comments: IComment[]
 }

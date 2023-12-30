@@ -23,7 +23,8 @@
       "@config/*": ["./src/config/*"],
       "@interfaces/*": ["./src/interfaces/*"],
       "@utils/*": ["./src/utils/*"],
-      "@constants/*": ["./src/constants/*"]
+      "@constants/*": ["./src/constants/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
